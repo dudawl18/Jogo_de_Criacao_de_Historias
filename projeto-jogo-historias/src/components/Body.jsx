@@ -1,13 +1,33 @@
+import { useState } from 'react'
 import './Body.css'
 
 function Body() {
 
-    function SortearImg() {
-        const icones = ['']
+    const icones = ['./public/img/cobra.svg', './public/img/castelo.svg', './public/img/arvore.svg', './public/img/lanca.svg',
+        './public/img/veleiro.svg', './public/img/acordo-maos.svg', './public/img/algemado.svg', './public/img/chave.svg', 
+        './public/img/furacao.svg', './public/img/grupo-de-pessoas.svg', './public/img/ilha.svg', './public/img/kit-primeiros-socorros.svg',
+        './public/img/navio.svg', './public/img/peixe-espinhoso.svg', './public/img/navio-afundando.svg', './public/img/perna-machucada.svg',
+         './public/img/pessoa-faleceu.svg', './public/img/pessoa-se-afogando.svg', './public/img/pirata.svg', './public/img/pistola.svg', 
+         './public/img/tubarao.svg', './public/img/veleiro.svg', './public/img/vulcao-errupcao.svg']
 
-        let sorteio = Math.floor(Math.random() * icones.length)
+    const [iconesSorteados, setIconesSorteados] = useState([])
 
-            (icones[sorteio])
+    function SortearIcon() {
+        let novosIcones = [] // Guarda os icones que foram sorteados na rodada
+        let iconesDisponiveis = icones.filter(img => !iconesSorteados.includes(img)) // Guarda os icones que ainda não forma sorteadas e evita que os icones que já apareceram sejam sorteados
+        
+        if (iconesDisponiveis.length < 6) {
+            setIconesSorteados([])
+            iconesDisponiveis = [...icones]
+        }
+        
+        while (novosIcones.length < 6) {
+            const sorteio = Math.floor(Math.random() * iconesDisponiveis.length)
+            const novoIcone = iconesDisponiveis.splice(sorteio, 1)[0]
+            novosIcones.push(novoIcone)
+        }
+        
+        setIconesSorteados(novosIcones)
     }
 
     return (
@@ -17,16 +37,13 @@ function Body() {
                 <p className='primeiroTitulo'>Boas vindas </p>
                 <p className='temaTitulo'>Tema Geral: Naufrágio</p>
                 <p className='instrucaoP'>Clique no botão para gerar uma imagem!!</p>
-                <button onClick={SortearImg} className='buttonSortear'>Gerar imagem</button>
+                <button onClick={SortearIcon} className='buttonSortear'>Gerar imagem</button>
             </div>
             <div className="telaJogoPart2-content">
                 <div className="img-content">
-                   <img className='imagemSorteada' src="./public/img/chave.svg" alt="" />
-                   <img className='imagemSorteada' src="./public/img/cobra.svg" alt="" />
-                   <img className='imagemSorteada' src="./public/img/castelo.svg" alt="" />
-                   <img className='imagemSorteada' src="./public/img/arvore.svg" alt="" />
-                   <img className='imagemSorteada' src="./public/img/lanca.svg" alt="" />
-                   <img className='imagemSorteada' src="./public/img/veleiro.svg" alt="" />
+                    {iconesSorteados.map((img, index) => (
+                       <img key={index} className='imagemSorteada' src={img} alt={`Icone sorteado ${index + 1}`} />
+                   ))}
                 </div>
             </div>
         </div>
