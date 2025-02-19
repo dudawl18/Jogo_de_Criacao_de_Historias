@@ -4,7 +4,7 @@ import './Body.css'
 function Body() {
 
     const icones = ['./public/img/cobra.svg', './public/img/castelo.svg', './public/img/arvore.svg', './public/img/lanca.svg',
-        './public/img/veleiro.svg', './public/img/acordo-maos.svg', './public/img/algemado.svg', './public/img/chave.svg', 
+        './public/img/veleiro.svg', './public/img/algemado.svg', './public/img/chave.svg', 
         './public/img/furacao.svg', './public/img/grupo-de-pessoas.svg', './public/img/ilha.svg', './public/img/kit-primeiros-socorros.svg',
         './public/img/navio.svg', './public/img/peixe-espinhoso.svg', './public/img/navio-afundando.svg', './public/img/perna-machucada.svg',
          './public/img/pessoa-faleceu.svg', './public/img/pessoa-se-afogando.svg', './public/img/pirata.svg', './public/img/pistola.svg', 
