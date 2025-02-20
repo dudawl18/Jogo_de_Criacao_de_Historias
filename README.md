@@ -13,5 +13,5 @@ Inspirado no jogo de dados Story Cubes, em que 9 dados com diferentes imagens em
 
 ## Interface Mobile 
 
-<img src="https://github.com/dudawl18/Jogo_de_Criacao_de_Historias/blob/main/projeto-jogo-historias/public/img/interface-mobile-story-cubes.png"/><br/>
+<img src="https://github.com/dudawl18/Jogo_de_Criacao_de_Historias/blob/main/projeto-jogo-historias/public/img/interface-mobile-story-cubes.png"/>
 <img src="https://github.com/dudawl18/Jogo_de_Criacao_de_Historias/blob/main/projeto-jogo-historias/public/img/interface-mobile-story-cubes-imgs.png"/>
